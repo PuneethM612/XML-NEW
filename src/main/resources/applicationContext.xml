@@ -41,7 +41,7 @@
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="showSql" value="${spring.jpa.show-sql}"/>
                 <property name="generateDdl" value="${spring.jpa.generate-ddl}"/>
-                <property name="database" value="MYSQL"/>
+                <property name="database" value="POSTGRESQL"/>
             </bean>
         </property>
         <property name="jpaProperties">
