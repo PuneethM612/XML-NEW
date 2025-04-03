@@ -1,4 +1,4 @@
-package com.example.marksmgmt.dto;
+package com.bnp.pb.lynx.dto;
 
 public class StudentMarksDto {
     

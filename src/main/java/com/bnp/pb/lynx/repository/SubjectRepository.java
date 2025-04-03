@@ -1,6 +1,6 @@
-package com.example.marksmgmt.repository;
+package com.bnp.pb.lynx.repository;
 
-import com.example.marksmgmt.model.Subject;
+import com.bnp.pb.lynx.model.Subject;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

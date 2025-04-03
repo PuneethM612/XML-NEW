@@ -1,8 +1,8 @@
-package com.example.marksmgmt.service.impl;
+package com.bnp.pb.lynx.service.impl;
 
-import com.example.marksmgmt.model.Subject;
-import com.example.marksmgmt.repository.SubjectRepository;
-import com.example.marksmgmt.service.SubjectService;
+import com.bnp.pb.lynx.model.Subject;
+import com.bnp.pb.lynx.repository.SubjectRepository;
+import com.bnp.pb.lynx.service.SubjectService;
 
 import java.util.List;
 

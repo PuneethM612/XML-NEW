@@ -1,6 +1,6 @@
-package com.example.marksmgmt.service;
+package com.bnp.pb.lynx.service;
 
-import com.example.marksmgmt.model.Student;
+import com.bnp.pb.lynx.model.Student;
 
 import java.util.List;
 

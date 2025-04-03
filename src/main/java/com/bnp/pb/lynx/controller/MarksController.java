@@ -1,13 +1,13 @@
-package com.example.marksmgmt.controller;
+package com.bnp.pb.lynx.controller;
 
-import com.example.marksmgmt.dto.StudentMarksDto;
-import com.example.marksmgmt.model.ExamType;
-import com.example.marksmgmt.model.Marks;
-import com.example.marksmgmt.model.Student;
-import com.example.marksmgmt.model.Subject;
-import com.example.marksmgmt.service.MarksService;
-import com.example.marksmgmt.service.StudentService;
-import com.example.marksmgmt.service.SubjectService;
+import com.bnp.pb.lynx.dto.StudentMarksDto;
+import com.bnp.pb.lynx.model.ExamType;
+import com.bnp.pb.lynx.model.Marks;
+import com.bnp.pb.lynx.model.Student;
+import com.bnp.pb.lynx.model.Subject;
+import com.bnp.pb.lynx.service.MarksService;
+import com.bnp.pb.lynx.service.StudentService;
+import com.bnp.pb.lynx.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.example.marksmgmt;
+package com.bnp.pb.lynx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.ImportResource;

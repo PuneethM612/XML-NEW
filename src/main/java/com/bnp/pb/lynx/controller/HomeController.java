@@ -1,4 +1,4 @@
-package com.example.marksmgmt.controller;
+package com.bnp.pb.lynx.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.marksmgmt.model;
+package com.bnp.pb.lynx.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

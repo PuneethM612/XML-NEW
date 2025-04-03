@@ -41,7 +41,7 @@
     </named-query>
     
     <!-- Special Queries for Top Rankers -->
-    <named-native-query name="Marks.findTop3Students" result-class="com.example.marksmgmt.model.Student">
+    <named-native-query name="Marks.findTop3Students" result-class="com.bnp.pb.lynx.model.Student">
         <query>
             SELECT s.* FROM students s
             JOIN (
@@ -54,7 +54,7 @@
         </query>
     </named-native-query>
     
-    <named-native-query name="Marks.findTop3StudentsByExamType" result-class="com.example.marksmgmt.model.Student">
+    <named-native-query name="Marks.findTop3StudentsByExamType" result-class="com.bnp.pb.lynx.model.Student">
         <query>
             SELECT s.* FROM students s
             JOIN (
@@ -93,7 +93,7 @@
     
     <!-- SQL Result Set Mappings -->
     <sql-result-set-mapping name="StudentMarksMapping">
-        <constructor-result target-class="com.example.marksmgmt.dto.StudentMarksDto">
+        <constructor-result target-class="com.bnp.pb.lynx.dto.StudentMarksDto">
             <column name="student_id" class="java.lang.Long"/>
             <column name="student_name" class="java.lang.String"/>
             <column name="roll_number" class="java.lang.String"/>

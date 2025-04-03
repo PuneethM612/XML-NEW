@@ -10,8 +10,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     
-    <groupId>com.example</groupId>
-    <artifactId>marksmgmt</artifactId>
+    <groupId>com.bnp.pb</groupId>
+    <artifactId>lynx</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Student Marks Management</name>
     <description>Spring Boot application for student marks management using XML-based configuration</description>

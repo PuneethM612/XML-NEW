@@ -1,9 +1,9 @@
-package com.example.marksmgmt.repository;
+package com.bnp.pb.lynx.repository;
 
-import com.example.marksmgmt.dto.StudentMarksDto;
-import com.example.marksmgmt.model.ExamType;
-import com.example.marksmgmt.model.Marks;
-import com.example.marksmgmt.model.Student;
+import com.bnp.pb.lynx.dto.StudentMarksDto;
+import com.bnp.pb.lynx.model.ExamType;
+import com.bnp.pb.lynx.model.Marks;
+import com.bnp.pb.lynx.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.example.marksmgmt.controller;
+package com.bnp.pb.lynx.controller;
 
-import com.example.marksmgmt.model.Student;
-import com.example.marksmgmt.service.StudentService;
+import com.bnp.pb.lynx.model.Student;
+import com.bnp.pb.lynx.service.StudentService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;

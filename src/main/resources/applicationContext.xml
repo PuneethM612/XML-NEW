@@ -17,7 +17,7 @@
     <context:property-placeholder location="classpath:application.properties"/>
     
     <!-- Component scan for service layer -->
-    <context:component-scan base-package="com.example.marksmgmt.service"/>
+    <context:component-scan base-package="com.bnp.pb.lynx.service"/>
     
     <!-- Data Source Configuration -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -30,7 +30,7 @@
     <!-- JPA Entity Manager Factory -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.example.marksmgmt.model"/>
+        <property name="packagesToScan" value="com.bnp.pb.lynx.model"/>
         <property name="mappingResources">
             <list>
                 <value>META-INF/orm.xml</value>
@@ -62,25 +62,25 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
     
     <!-- JPA Repository Configuration -->
-    <jpa:repositories base-package="com.example.marksmgmt.repository"
+    <jpa:repositories base-package="com.bnp.pb.lynx.repository"
                      entity-manager-factory-ref="entityManagerFactory"
                      transaction-manager-ref="transactionManager"/>
     
     <!-- Service Beans -->
-    <bean id="studentService" class="com.example.marksmgmt.service.impl.StudentServiceImpl">
+    <bean id="studentService" class="com.bnp.pb.lynx.service.impl.StudentServiceImpl">
         <constructor-arg ref="studentRepository"/>
     </bean>
     
-    <bean id="subjectService" class="com.example.marksmgmt.service.impl.SubjectServiceImpl">
+    <bean id="subjectService" class="com.bnp.pb.lynx.service.impl.SubjectServiceImpl">
         <constructor-arg ref="subjectRepository"/>
     </bean>
     
-    <bean id="marksService" class="com.example.marksmgmt.service.impl.MarksServiceImpl">
+    <bean id="marksService" class="com.bnp.pb.lynx.service.impl.MarksServiceImpl">
         <constructor-arg ref="marksRepository"/>
     </bean>
     
     <!-- Data Initializer Bean -->
-    <bean id="dataInitializer" class="com.example.marksmgmt.util.DataInitializer" init-method="initialize">
+    <bean id="dataInitializer" class="com.bnp.pb.lynx.util.DataInitializer" init-method="initialize">
         <constructor-arg ref="subjectService"/>
     </bean>
     

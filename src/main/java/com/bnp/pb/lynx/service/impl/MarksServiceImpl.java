@@ -1,11 +1,11 @@
-package com.example.marksmgmt.service.impl;
+package com.bnp.pb.lynx.service.impl;
 
-import com.example.marksmgmt.dto.StudentMarksDto;
-import com.example.marksmgmt.model.ExamType;
-import com.example.marksmgmt.model.Marks;
-import com.example.marksmgmt.model.Student;
-import com.example.marksmgmt.repository.MarksRepository;
-import com.example.marksmgmt.service.MarksService;
+import com.bnp.pb.lynx.dto.StudentMarksDto;
+import com.bnp.pb.lynx.model.ExamType;
+import com.bnp.pb.lynx.model.Marks;
+import com.bnp.pb.lynx.model.Student;
+import com.bnp.pb.lynx.repository.MarksRepository;
+import com.bnp.pb.lynx.service.MarksService;
 
 import java.util.List;
 
