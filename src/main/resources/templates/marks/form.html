@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/main :: html(
+                  ~{::title},
+                  ~{::#content},
+                  ~{'marks'},
+                  ~{::script}
+                 )}">
+<head>
+    <title th:text="${marks.id == null ? 'Create Marks' : 'Edit Marks'}">Marks Form</title>
+</head>
+<body>
+    <div id="content">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h5 class="card-title mb-0" th:text="${marks.id == null ? 'Create New Marks' : 'Edit Marks'}">Marks Form</h5>
+            </div>
+            <div class="card-body">
+                <form th:action="${marks.id == null ? @{/marks/create} : @{/marks/edit/{id}(id=${marks.id}))}" 
+                      th:object="${marks}" method="post" class="needs-validation" novalidate>
+                    
+                    <div class="mb-3">
+                        <label for="student" class="form-label">Student <span class="text-danger">*</span></label>
+                        <select class="form-select" id="student" th:field="*{student}" required>
+                            <option value="">-- Select Student --</option>
+                            <option th:each="student : ${students}" 
+                                    th:value="${student.id}" 
+                                    th:text="${student.name + ' (' + student.rollNumber + ')'}">
+                                John Doe (R001)
+                            </option>
+                        </select>
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('student')}" th:errors="*{student}">
+                            Please select a student.
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                        <select class="form-select" id="subject" th:field="*{subject}" required>
+                            <option value="">-- Select Subject --</option>
+                            <option th:each="subject : ${subjects}" 
+                                    th:value="${subject.id}" 
+                                    th:text="${subject.name}">
+                                Mathematics
+                            </option>
+                        </select>
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}">
+                            Please select a subject.
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="examType" class="form-label">Exam Type <span class="text-danger">*</span></label>
+                        <select class="form-select" id="examType" th:field="*{examType}" required>
+                            <option value="">-- Select Exam Type --</option>
+                            <option th:each="examType : ${examTypes}" 
+                                    th:value="${examType}" 
+                                    th:text="${examType.displayName}">
+                                Midterm
+                            </option>
+                        </select>
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('examType')}" th:errors="*{examType}">
+                            Please select an exam type.
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="marks" class="form-label">Marks <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="marks" th:field="*{marks}" min="0" max="100" step="0.01" required>
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('marks')}" th:errors="*{marks}">
+                            Please provide valid marks.
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a th:href="@{/marks}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-info">
+                            <span th:text="${marks.id == null ? 'Create' : 'Update'}">Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.needs-validation');
+            
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        });
+    </script>
+</body>
+</html> 

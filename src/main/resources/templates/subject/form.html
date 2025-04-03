@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/main :: html(
+                  ~{::title},
+                  ~{::#content},
+                  ~{'subjects'},
+                  ~{::script}
+                 )}">
+<head>
+    <title th:text="${subject.id == null ? 'Create Subject' : 'Edit Subject'}">Subject Form</title>
+</head>
+<body>
+    <div id="content">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0" th:text="${subject.id == null ? 'Create New Subject' : 'Edit Subject'}">Subject Form</h5>
+            </div>
+            <div class="card-body">
+                <form th:action="${subject.id == null ? @{/subjects/create} : @{/subjects/edit/{id}(id=${subject.id}))}" 
+                      th:object="${subject}" method="post" class="needs-validation" novalidate>
+                    
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Subject Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}" required>
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">
+                            Please provide a valid subject name.
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a th:href="@{/subjects}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-success">
+                            <span th:text="${subject.id == null ? 'Create' : 'Update'}">Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('.needs-validation');
+            
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        });
+    </script>
+</body>
+</html> 

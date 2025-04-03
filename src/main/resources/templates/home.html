@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/main :: html(
+                  ~{::title},
+                  ~{::#content},
+                  ~{},
+                  ~{::script}
+                 )}">
+<head>
+    <title>Home - Student Marks Management</title>
+</head>
+<body>
+    <div id="content">
+        <div class="jumbotron bg-light p-5 rounded">
+            <h1 class="display-4">Welcome to Student Marks Management</h1>
+            <p class="lead">A comprehensive system to manage students, subjects, and marks with XML-based Spring Boot configuration.</p>
+            <hr class="my-4">
+            <p>Use the quick links below to navigate through the application features.</p>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">Students</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Manage student records including creating, updating, and deleting students.</p>
+                        <a th:href="@{/students}" class="btn btn-outline-primary">Manage Students</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="card-title mb-0">Subjects</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Manage subject records including creating, updating, and deleting subjects.</p>
+                        <a th:href="@{/subjects}" class="btn btn-outline-success">Manage Subjects</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="card-title mb-0">Marks</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Manage marks for students in different subjects and exam types.</p>
+                        <a th:href="@{/marks}" class="btn btn-outline-info">Manage Marks</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="card-title mb-0">Top Rankers</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">View top-performing students based on their total marks and exam types.</p>
+                        <a th:href="@{/marks/topRankers}" class="btn btn-outline-warning">View Top Rankers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="card-title mb-0">About This Application</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>This Student Marks Management System is built using Spring Boot with XML-based configuration instead of annotations, demonstrating the traditional approach to Spring configuration.</p>
+                        <p>The application features:</p>
+                        <ul>
+                            <li>XML-based Spring configuration</li>
+                            <li>JPA entity mappings using XML</li>
+                            <li>Thymeleaf templates for the frontend</li>
+                            <li>Bootstrap for responsive UI</li>
+                            <li>Complete CRUD operations for all entities</li>
+                            <li>Special reports for top rankers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set active navigation tab
+        document.addEventListener('DOMContentLoaded', function() {
+            const activateTab = function() {
+                const currentTab = document.querySelector('.nav-link.active');
+                if (currentTab) {
+                    currentTab.classList.remove('active');
+                }
+                
+                const homeTab = document.querySelector('a[href="/marksmgmt/"]');
+                if (homeTab) {
+                    homeTab.classList.add('active');
+                }
+            };
+            
+            setTimeout(activateTab, 100);
+        });
+    </script>
+</body>
+</html> 

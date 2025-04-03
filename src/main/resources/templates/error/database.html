@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/main :: html(
+                  ~{::title},
+                  ~{::#content},
+                  ~{},
+                  ~{}
+                 )}">
+<head>
+    <title>Database Error - Student Marks Management</title>
+</head>
+<body>
+    <div id="content">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5 class="card-title mb-0">Database Error</h5>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="bi bi-database-x text-danger" style="font-size: 4rem;"></i>
+                </div>
+                <h3 class="text-center mb-4">Database Error</h3>
+                <p class="text-center mb-4">Sorry, a database error has occurred. Please try again later or contact support if the problem persists.</p>
+                
+                <div th:if="${message}" class="alert alert-danger">
+                    <p><strong>Error Details:</strong> <span th:text="${message}">Error message</span></p>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="/" th:href="@{/}" class="btn btn-primary">
+                        <i class="bi bi-house-fill"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
