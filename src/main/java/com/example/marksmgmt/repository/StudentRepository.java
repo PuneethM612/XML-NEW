@@ -2,13 +2,14 @@ package com.example.marksmgmt.repository;
 
 import com.example.marksmgmt.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+// XML-based configuration for repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
     
-    Student findByRollNumber(@Param("rollNumber") String rollNumber);
+    // Named queries defined in repository-orm.xml
+    Student findByRollNumber(String rollNumber);
     
-    List<Student> findByNameContaining(@Param("name") String name);
+    List<Student> findByNameContaining(String name);
 } 

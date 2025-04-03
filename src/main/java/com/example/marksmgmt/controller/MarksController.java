@@ -18,28 +18,23 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.util.List;
 
-@Controller
-@RequestMapping("/marks")
 public class MarksController {
     
     private final MarksService marksService;
     private final StudentService studentService;
     private final SubjectService subjectService;
     
-    @Autowired
     public MarksController(MarksService marksService, StudentService studentService, SubjectService subjectService) {
         this.marksService = marksService;
         this.studentService = studentService;
         this.subjectService = subjectService;
     }
     
-    @GetMapping
     public String getAllMarks(Model model) {
         model.addAttribute("marksList", marksService.getAllMarks());
         return "marks/list";
     }
     
-    @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("marks", new Marks());
         model.addAttribute("students", studentService.getAllStudents());
@@ -48,10 +43,9 @@ public class MarksController {
         return "marks/form";
     }
     
-    @PostMapping("/create")
-    public String createMarks(@Valid @ModelAttribute("marks") Marks marks,
-                             BindingResult result,
-                             RedirectAttributes redirectAttributes) {
+    public String createMarks(Marks marks,
+                            BindingResult result,
+                            RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             return "marks/form";
         }
@@ -61,8 +55,7 @@ public class MarksController {
         return "redirect:/marks";
     }
     
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Long id, Model model) {
+    public String showEditForm(Long id, Model model) {
         Marks marks = marksService.getMarksById(id);
         if (marks == null) {
             return "redirect:/marks";
@@ -74,11 +67,10 @@ public class MarksController {
         return "marks/form";
     }
     
-    @PostMapping("/edit/{id}")
-    public String updateMarks(@PathVariable Long id,
-                             @Valid @ModelAttribute("marks") Marks marks,
-                             BindingResult result,
-                             RedirectAttributes redirectAttributes) {
+    public String updateMarks(Long id,
+                            Marks marks,
+                            BindingResult result,
+                            RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             return "marks/form";
         }
@@ -89,16 +81,14 @@ public class MarksController {
         return "redirect:/marks";
     }
     
-    @GetMapping("/delete/{id}")
-    public String deleteMarks(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+    public String deleteMarks(Long id, RedirectAttributes redirectAttributes) {
         marksService.deleteMarks(id);
         redirectAttributes.addFlashAttribute("message", "Marks deleted successfully!");
         return "redirect:/marks";
     }
     
     // Top Rankers Functionality
-    @GetMapping("/topRankers")
-    public String showTopRankers(@RequestParam(required = false) String examType, Model model) {
+    public String showTopRankers(String examType, Model model) {
         List<StudentMarksDto> topStudents;
         
         if (examType != null && !examType.isEmpty()) {

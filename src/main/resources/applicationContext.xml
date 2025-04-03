@@ -34,6 +34,7 @@
         <property name="mappingResources">
             <list>
                 <value>META-INF/orm.xml</value>
+                <value>META-INF/repository-orm.xml</value>
             </list>
         </property>
         <property name="jpaVendorAdapter">
@@ -57,15 +58,30 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
     
-    <!-- Enable annotation-driven transaction management -->
+    <!-- Enable transaction management -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
     
     <!-- JPA Repository Configuration -->
     <jpa:repositories base-package="com.example.marksmgmt.repository"
                      entity-manager-factory-ref="entityManagerFactory"
                      transaction-manager-ref="transactionManager"/>
-                     
+    
+    <!-- Service Beans -->
+    <bean id="studentService" class="com.example.marksmgmt.service.impl.StudentServiceImpl">
+        <constructor-arg ref="studentRepository"/>
+    </bean>
+    
+    <bean id="subjectService" class="com.example.marksmgmt.service.impl.SubjectServiceImpl">
+        <constructor-arg ref="subjectRepository"/>
+    </bean>
+    
+    <bean id="marksService" class="com.example.marksmgmt.service.impl.MarksServiceImpl">
+        <constructor-arg ref="marksRepository"/>
+    </bean>
+    
     <!-- Data Initializer Bean -->
-    <bean id="dataInitializer" class="com.example.marksmgmt.util.DataInitializer" init-method="initialize"/>
+    <bean id="dataInitializer" class="com.example.marksmgmt.util.DataInitializer" init-method="initialize">
+        <constructor-arg ref="subjectService"/>
+    </bean>
     
 </beans> 

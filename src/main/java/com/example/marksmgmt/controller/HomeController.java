@@ -3,15 +3,14 @@ package com.example.marksmgmt.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
+// Remove all annotations for XML-based configuration
 public class HomeController {
     
-    @GetMapping("/")
+    // Methods will be mapped in XML configuration
     public String home() {
         return "home";
     }
     
-    @GetMapping("/error")
     public String error() {
         return "error/general";
     }

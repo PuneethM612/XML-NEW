@@ -2,18 +2,16 @@ package com.example.marksmgmt.util;
 
 import com.example.marksmgmt.model.Subject;
 import com.example.marksmgmt.service.SubjectService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Component
+// Remove all annotations for XML-based configuration
 public class DataInitializer {
     
     private final SubjectService subjectService;
     
-    @Autowired
+    // Constructor injection will be configured in XML
     public DataInitializer(SubjectService subjectService) {
         this.subjectService = subjectService;
     }
