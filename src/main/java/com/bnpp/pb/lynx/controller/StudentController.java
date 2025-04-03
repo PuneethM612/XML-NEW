@@ -1,7 +1,7 @@
-package com.bnp.pb.lynx.controller;
+package com.bnpp.pb.lynx.controller;
 
-import com.bnp.pb.lynx.model.Student;
-import com.bnp.pb.lynx.service.StudentService;
+import com.bnpp.pb.lynx.model.Student;
+import com.bnpp.pb.lynx.service.StudentService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;

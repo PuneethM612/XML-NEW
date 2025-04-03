@@ -1,4 +1,4 @@
-package com.bnp.pb.lynx.model;
+package com.bnpp.pb.lynx.model;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

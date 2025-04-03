@@ -1,4 +1,4 @@
-package com.bnp.pb.lynx.model;
+package com.bnpp.pb.lynx.model;
 
 public enum ExamType {
     MIDTERM("Midterm"),

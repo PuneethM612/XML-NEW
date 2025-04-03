@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     
-    <groupId>com.bnp.pb</groupId>
+    <groupId>com.bnpp.pb</groupId>
     <artifactId>lynx</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Student Marks Management</name>

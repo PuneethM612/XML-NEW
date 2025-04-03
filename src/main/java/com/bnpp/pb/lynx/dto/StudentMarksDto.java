@@ -1,4 +1,4 @@
-package com.bnp.pb.lynx.dto;
+package com.bnpp.pb.lynx.dto;
 
 public class StudentMarksDto {
     

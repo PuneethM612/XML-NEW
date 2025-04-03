@@ -1,7 +1,7 @@
-package com.bnp.pb.lynx.util;
+package com.bnpp.pb.lynx.util;
 
-import com.bnp.pb.lynx.model.Subject;
-import com.bnp.pb.lynx.service.SubjectService;
+import com.bnpp.pb.lynx.model.Subject;
+import com.bnpp.pb.lynx.service.SubjectService;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.bnp.pb.lynx.model;
+package com.bnpp.pb.lynx.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,17 +8,19 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Subject {
+public class Student {
     
     private Long id;
     private String name;
+    private String rollNumber;
     private List<Marks> marksList = new ArrayList<>();
     
-    public Subject() {
+    public Student() {
     }
     
-    public Subject(String name) {
+    public Student(String name, String rollNumber) {
         this.name = name;
+        this.rollNumber = rollNumber;
     }
     
     public Long getId() {
@@ -37,6 +39,14 @@ public class Subject {
         this.name = name;
     }
     
+    public String getRollNumber() {
+        return rollNumber;
+    }
+    
+    public void setRollNumber(String rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+    
     public List<Marks> getMarksList() {
         return marksList;
     }
@@ -47,9 +57,10 @@ public class Subject {
     
     @Override
     public String toString() {
-        return "Subject{" +
+        return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", rollNumber='" + rollNumber + '\'' +
                 '}';
     }
 } 

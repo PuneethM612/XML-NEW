@@ -1,8 +1,8 @@
-package com.bnp.pb.lynx.service.impl;
+package com.bnpp.pb.lynx.service.impl;
 
-import com.bnp.pb.lynx.model.Subject;
-import com.bnp.pb.lynx.repository.SubjectRepository;
-import com.bnp.pb.lynx.service.SubjectService;
+import com.bnpp.pb.lynx.model.Subject;
+import com.bnpp.pb.lynx.repository.SubjectRepository;
+import com.bnpp.pb.lynx.service.SubjectService;
 
 import java.util.List;
 

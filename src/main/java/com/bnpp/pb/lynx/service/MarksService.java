@@ -1,9 +1,9 @@
-package com.bnp.pb.lynx.service;
+package com.bnpp.pb.lynx.service;
 
-import com.bnp.pb.lynx.dto.StudentMarksDto;
-import com.bnp.pb.lynx.model.ExamType;
-import com.bnp.pb.lynx.model.Marks;
-import com.bnp.pb.lynx.model.Student;
+import com.bnpp.pb.lynx.dto.StudentMarksDto;
+import com.bnpp.pb.lynx.model.ExamType;
+import com.bnpp.pb.lynx.model.Marks;
+import com.bnpp.pb.lynx.model.Student;
 
 import java.util.List;
 

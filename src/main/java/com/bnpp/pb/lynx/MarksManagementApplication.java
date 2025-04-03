@@ -1,4 +1,4 @@
-package com.bnp.pb.lynx;
+package com.bnpp.pb.lynx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.ImportResource;

@@ -19,7 +19,7 @@
     
     <!-- Spring Boot auto-configuration beans -->
     <bean id="springBootApplication" class="org.springframework.boot.SpringApplication">
-        <constructor-arg value="com.bnp.pb.lynx.MarksManagementApplication" />
+        <constructor-arg value="com.bnpp.pb.lynx.MarksManagementApplication" />
     </bean>
     
 </beans> 

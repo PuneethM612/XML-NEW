@@ -19,17 +19,17 @@
     <mvc:resources mapping="/css/**" location="/static/css/"/>
     
     <!-- Controller Beans -->
-    <bean id="homeController" class="com.bnp.pb.lynx.controller.HomeController"/>
+    <bean id="homeController" class="com.bnpp.pb.lynx.controller.HomeController"/>
     
-    <bean id="studentController" class="com.bnp.pb.lynx.controller.StudentController">
+    <bean id="studentController" class="com.bnpp.pb.lynx.controller.StudentController">
         <constructor-arg ref="studentService"/>
     </bean>
     
-    <bean id="subjectController" class="com.bnp.pb.lynx.controller.SubjectController">
+    <bean id="subjectController" class="com.bnpp.pb.lynx.controller.SubjectController">
         <constructor-arg ref="subjectService"/>
     </bean>
     
-    <bean id="marksController" class="com.bnp.pb.lynx.controller.MarksController">
+    <bean id="marksController" class="com.bnpp.pb.lynx.controller.MarksController">
         <constructor-arg ref="marksService"/>
         <constructor-arg ref="studentService"/>
         <constructor-arg ref="subjectService"/>

@@ -6,7 +6,7 @@
                  version="2.1">
 
     <!-- Student Entity -->
-    <entity class="com.bnp.pb.lynx.model.Student">
+    <entity class="com.bnpp.pb.lynx.model.Student">
         <table name="students"/>
         <attributes>
             <id name="id">
@@ -27,7 +27,7 @@
     </entity>
     
     <!-- Subject Entity -->
-    <entity class="com.bnp.pb.lynx.model.Subject">
+    <entity class="com.bnpp.pb.lynx.model.Subject">
         <table name="subjects"/>
         <attributes>
             <id name="id">
@@ -45,7 +45,7 @@
     </entity>
     
     <!-- Marks Entity -->
-    <entity class="com.bnp.pb.lynx.model.Marks">
+    <entity class="com.bnpp.pb.lynx.model.Marks">
         <table name="marks"/>
         <attributes>
             <id name="id">

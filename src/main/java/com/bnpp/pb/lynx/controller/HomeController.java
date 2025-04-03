@@ -1,4 +1,4 @@
-package com.bnp.pb.lynx.controller;
+package com.bnpp.pb.lynx.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

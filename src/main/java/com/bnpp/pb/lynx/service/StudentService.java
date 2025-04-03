@@ -1,6 +1,6 @@
-package com.bnp.pb.lynx.service;
+package com.bnpp.pb.lynx.service;
 
-import com.bnp.pb.lynx.model.Student;
+import com.bnpp.pb.lynx.model.Student;
 
 import java.util.List;
 
